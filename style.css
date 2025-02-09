@@ -1,0 +1,430 @@
+:root {
+    /* Updated color palette */
+    --almost-black: #121212;   /* A very dark gray, almost black */
+    --light-aqua: #A7FFEB;     /* Light cyan/aqua from the logo */
+    --light-blue: #29ABE2;      /* a light blue color */
+    --neon-bg-overlay: rgba(167, 255, 235, 0.15); /* Semi-transparent neon for backgrounds */
+    --hover-color: #4EE0FF;     /* The new hover color */
+}
+
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--light-aqua); /* Set text color to light aqua */
+    overflow-x: hidden;
+    background-color: var(--almost-black);
+    display: flex;          /* Enable Flexbox */
+    flex-direction: column; /* Stack header, main, footer */
+    min-height: 100vh;     /* Ensure body takes up the entire viewport */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--light-aqua);
+    color: var(--almost-black);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Added transform transition */
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+    color: var(--almost-black);
+    text-decoration: none;
+    transform: translateY(-2px); /* Lift the button slightly on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header Styles */
+header {
+    background-color: transparent; /* Transparent header */
+    color: var(--light-aqua);             /* Light aqua text */
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Logo Styling */
+.logo {
+    max-height: 100px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+nav ul li {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: var(--light-aqua); /* Light aqua menu text */
+    transition: background-color 0.3s, color 0.3s ease; /* Added color transition */
+    text-decoration: none;
+    height: 100%;
+}
+
+nav ul li a:hover {
+    background-color: var(--neon-bg-overlay); /* Use new hover color */
+    color: var(--almost-black);
+    text-decoration: none;
+}
+
+/* Mobile Menu Button (Hidden by default) */
+#mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Section Styles */
+main {
+    flex: 1;            /* Allow main to grow and fill available space */
+    width: 100%;
+  }
+main > section {
+    min-height: 100vh;
+    display: flex;          /* Enable Flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: var(--almost-black); /* Dark background */
+    padding: 3rem 0;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-aqua);
+    background-image: url('images/image_fx_3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--neon-bg-overlay); /* Semi-transparent background */
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+/* Service Section Styles */
+.service-section {
+    position: relative;
+    color: var(--light-aqua);
+}
+
+.service-content {
+    background-color: var(--neon-bg-overlay);
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    will-change: opacity, transform;
+}
+
+.service-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.service-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+/* Apply these styles only on larger screens */
+@media (min-width: 769px) {
+.service-content {
+    top: -5rem;
+}
+}
+
+.service-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Specific backgrounds */
+#services::before {
+    background-image: url('images/data_center1.jpg');
+}
+
+#case-studies::before {
+    background-image: url('images/image_fx_1.jpg');
+}
+
+#blog::before {
+    background-image: url('images/image_fx_2.jpg');
+}
+
+#about-us::before {
+    background-image: url('images/david2.png');
+}
+
+#contact::before {
+    background-image: url('images/Screenshot 2024-07-11 at 14.38.16.png');
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--almost-black);
+    color: var(--light-aqua);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.footer-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.social-networks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-networks li {
+    margin: 0 0.5rem;
+}
+
+.social-networks a {
+    color: var(--light-aqua);
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease-in-out, filter 0.3s ease; /* added filter to transition */
+}
+
+.social-networks a:hover {
+    color: var(--hover-color);
+    transform: translateY(-2px); /* Added transform */
+    filter: brightness(1.5);  /* This will make the icons brighter on hover */
+}
+
+.copyright {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #adb5bd;
+}
+
+/* Back to Top Arrow */
+.back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--light-aqua);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    position: relative;
+    animation: float 2s ease-in-out infinite;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-to-top:hover {
+    background-color: var(--hover-color); /* Changed hover color */
+    text-decoration: none;
+    transform: translateY(-2px); /* Added transform */
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Add class to make the header show the target element correctly */
+.section-padding {
+    padding-top: 100px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    nav h1,
+    nav a {
+      width: 100%;
+      text-align: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: static;
+        background-color: var(--almost-black); /* Black background */
+        width: 100%;
+        text-align: left;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 0;
+        box-sizing: border-box;
+        margin-top: 1rem;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        border-bottom: 1px solid #dee2e6;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 1rem;
+        color: var(--light-aqua); /* Added */
+        width: 100%;
+        display: block;
+        text-align: left;
+        background-color: var(--almost-black);
+    }
+
+    #mobile-menu-button {
+        display: block;
+        color: var(--light-aqua);
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
