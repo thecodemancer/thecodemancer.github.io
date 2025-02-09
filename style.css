@@ -412,8 +412,10 @@ footer {
         cursor: pointer;
     }
 
+    
     .hero {
         padding: 2rem 0;
+        background-position-x: -36rem
     }
 
     .hero h1 {
