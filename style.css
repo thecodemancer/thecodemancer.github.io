@@ -122,7 +122,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: var(--neon-bg-overlay); /* Use new hover color */
+    background-color: var(--light-blue); /* Using the light blue we defined previously */
     color: var(--almost-black);
     text-decoration: none;
 }
